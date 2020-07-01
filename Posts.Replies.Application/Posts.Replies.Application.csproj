@@ -16,6 +16,8 @@
     <Folder Include="Helpers\" />
     <Folder Include="Dtos\" />
     <Folder Include="Configurations\" />
+    <Folder Include="Queries\" />
+    <Folder Include="Handlers\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Posts.Replies.Infrastructure\Posts.Replies.Infrastructure.csproj" />
