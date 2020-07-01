@@ -18,6 +18,9 @@
     <Folder Include="Configurations\" />
     <Folder Include="Queries\" />
     <Folder Include="Handlers\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Commands\" />
+    <Folder Include="Validators\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Posts.Replies.Infrastructure\Posts.Replies.Infrastructure.csproj" />
