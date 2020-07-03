@@ -3,7 +3,9 @@ using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
 using Posts.Replies.Application.Dtos;
+using Posts.Replies.Application.Exceptions;
 using Posts.Replies.Application.Queries;
+using Posts.Replies.Infrastructure.Entities;
 using Posts.Replies.Infrastructure.Services;
 
 namespace Posts.Replies.Application.Handlers
@@ -24,6 +26,11 @@ namespace Posts.Replies.Application.Handlers
         public async Task<ReplyDto> Handle(GetReplyByIdQuery request, CancellationToken cancellationToken)
         {
             var reply = await _replyService.GetById(request.Id);
+
+            if (reply == null)
+            {
+                throw new NotFoundException(nameof(Reply));
+            }
 
             var response = _mapper.Map<ReplyDto>(reply);
 

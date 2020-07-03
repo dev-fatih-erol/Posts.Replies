@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="MediatR" Version="8.0.2" />
-    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="AutoMapper" Version="10.0.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.5" />
     <PackageReference Include="MongoDB.Driver" Version="2.10.4" />
@@ -21,6 +21,7 @@
     <Folder Include="Extensions\" />
     <Folder Include="Commands\" />
     <Folder Include="Validators\" />
+    <Folder Include="Exceptions\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Posts.Replies.Infrastructure\Posts.Replies.Infrastructure.csproj" />

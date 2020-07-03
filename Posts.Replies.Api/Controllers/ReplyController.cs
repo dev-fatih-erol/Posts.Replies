@@ -26,14 +26,17 @@ namespace Posts.Replies.Api.Controllers
         [Route("Reply/{id:length(24)}")]
         public async Task<IActionResult> GetById([FromRoute]string id)
         {
-            var reply = await _mediator.Send(new GetReplyByIdQuery(id));
+            return Ok(await _mediator.Send(new GetReplyByIdQuery(id)));
+        }
 
-            if (reply != null)
-            {
-                return Ok(reply);
-            }
+        [HttpDelete]
+        [Route("Reply/{id:length(24)}")]
+        public async Task<IActionResult> Delete([FromRoute]string id)
+        {
+            int userId = 3;
+            await _mediator.Send(new DeleteReplyCommand(id, userId));
 
-            return NotFound();
+            return NoContent();
         }
 
         [HttpPost]

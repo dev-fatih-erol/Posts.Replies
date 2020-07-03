@@ -19,9 +19,19 @@ namespace Posts.Replies.Infrastructure.Services
             return _dbContext.Replies.AsQueryable().Where(r => r.CommentId == commentId);
         }
 
+        public async Task<Reply> GetById(string id, int userId)
+        {
+            return await _dbContext.Replies.Find(r => r.Id == id && r.User.Id == userId).FirstOrDefaultAsync();
+        }
+
         public async Task<Reply> GetById(string id)
         {
             return await _dbContext.Replies.Find(r => r.Id == id).FirstOrDefaultAsync();
+        }
+
+        public async Task Delete(string id)
+        {
+            await _dbContext.Replies.DeleteOneAsync(r => r.Id == id);
         }
 
         public async Task Create(Reply reply)
