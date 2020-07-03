@@ -32,7 +32,7 @@ namespace Posts.Replies.Api.Filters
                 context.Result = new JsonResult(errors);
                 context.HttpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
             }
-            else if (exception is NotFoundException notFoundException)
+            else if (exception is NotFoundException)
             {
                 context.Result = new JsonResult(exception.Message);
                 context.HttpContext.Response.StatusCode = (int)HttpStatusCode.NotFound;
