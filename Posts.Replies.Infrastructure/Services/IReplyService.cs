@@ -8,11 +8,9 @@ namespace Posts.Replies.Infrastructure.Services
     {
         IMongoQueryable<Reply> GetByCommentId(string commentId);
 
-        Task<Reply> GetById(string id, int userId);
-
         Task<Reply> GetById(string id);
 
-        Task Delete(string id);
+        Task<Reply> Delete(string id, int userId);
 
         Task Create(Reply reply);
     }
