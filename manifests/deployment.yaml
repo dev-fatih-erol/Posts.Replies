@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: asdas
+  labels:
+    app: asdas
+  namespace: namespace-workflow-1710628512570
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: asdas
+  template:
+    metadata:
+      labels:
+        app: asdas
+    spec:
+      containers:
+        - name: asdas
+          image: acrworkflow1710628512570.azurecr.io/image-workflow-1710628512570:latest
+          ports:
+            - containerPort: 5000
